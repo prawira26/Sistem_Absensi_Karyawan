@@ -1,0 +1,92 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.main-w3layouts.wrapper {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.main-w3layouts.wrapper h1 {
+  margin-bottom: 25px;
+  color: #444;
+}
+
+/* Form Inputs */
+.agileits-top input[type="text"],
+.agileits-top input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.agileits-top input[type="text"]:focus,
+.agileits-top input[type="password"]:focus {
+  border-color: #667eea;
+  background: #fff;
+}
+
+/* Button */
+.agileits-top input[type="submit"] {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.agileits-top input[type="submit"]:hover {
+  background: #5a67d8;
+}
+
+/* Footer */
+.colorlibcopy-agile {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #eee;
+}
+
+.colorlibcopy-agile a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+ul.colorlib-bubbles {
+  display: none; /* Optional: hide bubbles if not needed */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

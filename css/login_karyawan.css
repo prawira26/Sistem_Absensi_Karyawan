@@ -1,0 +1,1030 @@
+/* Modern Employee Information System CSS */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Header Styles */
+.header_area {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #764ba2 !important;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: #333 !important;
+  margin: 0 15px;
+  position: relative;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #764ba2 !important;
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* Main Content */
+.side-main {
+  margin-top: 80px;
+}
+
+/* Hero Banner */
+.hero-banner {
+  padding: 100px 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1.5" fill="white" opacity="0.05"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="30" r="1.5" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+.hero-banner__content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-banner h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  animation: slideInLeft 1s ease-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-banner p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  animation: slideInLeft 1s ease-out 0.3s both;
+  opacity: 0.9;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Section Styles */
+.section-margin {
+  padding: 80px 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  margin: 40px 0;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.section-intro__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+.section-intro__title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Card Styles */
+.card-feature {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  transition: all 0.4s ease;
+}
+
+.card-feature:hover::before {
+  left: 0;
+}
+
+.card-feature:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.card-feature__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.card-feature:hover .card-feature__title {
+  color: #764ba2;
+}
+
+.card-feature__subtitle {
+  font-size: 1rem;
+  color: #666;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.card-feature:hover .card-feature__subtitle {
+  color: #555;
+}
+
+/* Login Panel */
+.zero-panel {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 25px;
+  padding: 4rem 2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3);
+}
+
+.zero-panel::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.zero-panel-content {
+  position: relative;
+  z-index: 2;
+}
+
+.zero-panel h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Styles */
+.btn {
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(245, 87, 108, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-decoration: none;
+}
+
+/* Footer */
+.footer-area {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.footer-text {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.footer-social a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  transform: translateY(-5px) rotate(360deg);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-banner h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-banner p {
+    font-size: 1.1rem;
+  }
+  
+  .section-intro__title {
+    font-size: 2rem;
+  }
+  
+  .zero-panel h2 {
+    font-size: 2rem;
+  }
+  
+  .btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    margin: 5px;
+  }
+  
+  .card-feature {
+    margin-bottom: 2rem;
+    height: auto;
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-banner {
+    padding: 60px 0;
+  }
+  
+  .hero-banner h1 {
+    font-size: 2rem;
+  }
+  
+  .section-margin {
+    margin: 20px;
+    padding: 60px 20px;
+  }
+  
+  .zero-panel {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* ===== LOGIN PAGE STYLES ===== */
+
+/* Login Main Container */
+.main-w3layouts {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.main-w3layouts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="loginPattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23loginPattern)"/></svg>');
+  animation: float 15s ease-in-out infinite;
+}
+
+/* Login Title */
+.main-w3layouts h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  animation: slideInDown 1s ease-out;
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Login Form Container */
+.main-agileinfo {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 10;
+  animation: slideInUp 1s ease-out 0.3s both;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-agileinfo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+  border-radius: 25px;
+  z-index: -1;
+}
+
+/* Form Styles */
+.agileits-top form {
+  width: 100%;
+}
+
+/* Input Fields */
+.text {
+  width: 100%;
+  padding: 18px 25px;
+  margin-bottom: 1.5rem;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  transition: all 0.3s ease;
+  outline: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.text::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.text:focus {
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
+}
+
+.text:focus::placeholder {
+  color: transparent;
+}
+
+/* Login Button */
+input[type="submit"] {
+  width: 100%;
+  padding: 18px 25px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+input[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s;
+}
+
+input[type="submit"]:hover::before {
+  left: 100%;
+}
+
+input[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+input[type="submit"]:active {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Copyright Section */
+.colorlibcopy-agile {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-top: 2rem;
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.colorlibcopy-agile a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.colorlibcopy-agile a:hover {
+  color: #f0f0f0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Floating Bubbles Animation */
+.colorlib-bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  list-style: none;
+  pointer-events: none;
+}
+
+.colorlib-bubbles li {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+  border-radius: 50%;
+}
+
+.colorlib-bubbles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.colorlib-bubbles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.colorlib-bubbles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.colorlib-bubbles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.colorlib-bubbles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.colorlib-bubbles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.colorlib-bubbles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.colorlib-bubbles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.colorlib-bubbles li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.colorlib-bubbles li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+/* Responsive Design for Login */
+@media (max-width: 768px) {
+  .main-w3layouts h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .main-agileinfo {
+    padding: 2.5rem 2rem;
+    margin: 0 10px;
+  }
+  
+  .text {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+  }
+  
+  input[type="submit"] {
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-w3layouts h1 {
+    font-size: 2rem;
+  }
+  
+  .main-agileinfo {
+    padding: 2rem 1.5rem;
+  }
+  
+  .text {
+    padding: 12px 18px;
+  }
+  
+  input[type="submit"] {
+    padding: 12px 18px;
+  }
+}
+
+/* Loading State */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== EMPLOYEE LOGIN PAGE STYLES ===== */
+
+/* Employee Login Specific Background */
+.main-w3layouts.employee-login {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.main-w3layouts.employee-login::before {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="employeePattern" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="1.5" fill="white" opacity="0.15"/><circle cx="6" cy="6" r="0.8" fill="white" opacity="0.1"/><circle cx="19" cy="19" r="0.8" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23employeePattern)"/></svg>');
+}
+
+/* Employee Login Title Styling */
+.main-w3layouts h1 {
+  position: relative;
+}
+
+.main-w3layouts h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.7));
+  transform: translateX(-50%);
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Different styling for Employee Login Card */
+body:has(.main-w3layouts h1:contains("Login Karyawan")) .main-agileinfo {
+  background: rgba(255, 255, 255, 0.98);
+  border: 2px solid rgba(79, 172, 254, 0.2);
+  box-shadow: 0 30px 60px rgba(79, 172, 254, 0.2);
+}
+
+body:has(.main-w3layouts h1:contains("Login Karyawan")) .main-agileinfo::before {
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.08), rgba(0, 242, 254, 0.08));
+}
+
+/* Employee Input Field Styling */
+body:has(.main-w3layouts h1:contains("Login Karyawan")) .text {
+  border: 2px solid rgba(79, 172, 254, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+body:has(.main-w3layouts h1:contains("Login Karyawan")) .text:focus {
+  border-color: #4facfe;
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.2);
+}
+
+/* Employee Submit Button Styling */
+body:has(.main-w3layouts h1:contains("Login Karyawan")) input[type="submit"] {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  box-shadow: 0 10px 30px rgba(79, 172, 254, 0.4);
+}
+
+body:has(.main-w3layouts h1:contains("Login Karyawan")) input[type="submit"]:hover {
+  box-shadow: 0 15px 40px rgba(79, 172, 254, 0.5);
+}
+
+/* Alternative approach using CSS attribute selectors for better compatibility */
+.employee-page .main-w3layouts {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.employee-page .main-w3layouts::before {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="empPattern" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="1.5" fill="white" opacity="0.15"/><circle cx="6" cy="6" r="0.8" fill="white" opacity="0.1"/><circle cx="19" cy="19" r="0.8" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23empPattern)"/></svg>');
+}
+
+.employee-page .main-agileinfo {
+  background: rgba(255, 255, 255, 0.98);
+  border: 2px solid rgba(79, 172, 254, 0.2);
+  box-shadow: 0 30px 60px rgba(79, 172, 254, 0.2);
+}
+
+.employee-page .main-agileinfo::before {
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.08), rgba(0, 242, 254, 0.08));
+}
+
+.employee-page .text {
+  border: 2px solid rgba(79, 172, 254, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.employee-page .text:focus {
+  border-color: #4facfe;
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.2);
+}
+
+.employee-page input[type="submit"] {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  box-shadow: 0 10px 30px rgba(79, 172, 254, 0.4);
+}
+
+.employee-page input[type="submit"]:hover {
+  box-shadow: 0 15px 40px rgba(79, 172, 254, 0.5);
+}
+
+/* Employee Bubbles - Different colors */
+.employee-page .colorlib-bubbles li {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.employee-page .colorlib-bubbles li:nth-child(odd) {
+  background: rgba(79, 172, 254, 0.1);
+}
+
+.employee-page .colorlib-bubbles li:nth-child(even) {
+  background: rgba(0, 242, 254, 0.1);
+}
+
+/* Enhanced Icon Effect for Employee Login */
+.employee-page .main-w3layouts h1::before {
+  content: '👤';
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Employee Login Form Header */
+.employee-page .agileits-top::before {
+  content: 'Selamat Datang Karyawan';
+  display: block;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* Special Employee Card Styling */
+.employee-page .main-agileinfo {
+  position: relative;
+  overflow: hidden;
+}
+
+.employee-page .main-agileinfo::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.1));
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Different animation timing for variety */
+@keyframes floatEmployee {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg); 
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translate(-20px, -20px) rotate(180deg); 
+    opacity: 0.6;
+  }
+}
+
+.employee-page .main-agileinfo::after {
+  animation: floatEmployee 8s ease-in-out infinite;
+}
+
+/* Employee Page Responsive */
+@media (max-width: 768px) {
+  .employee-page .main-w3layouts h1::before {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .employee-page .agileits-top::before {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Success/Error Message Styling for Employee Page */
+.employee-page .message {
+  padding: 15px 20px;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  animation: slideInDown 0.5s ease-out;
+}
+
+.employee-page .message.success {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+}
+
+.employee-page .message.error {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
